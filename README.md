@@ -1,4 +1,6 @@
-# What is Jeedom ?
+# What is Jeedom (amrhf) ?
+
+It is a set of Docker repositories for the jeedom software to run on Raspberry Pi 2 and other devices with an ARM processor with hard float computing capabilities.
 
 The Jeedom software is open source, you have full access to the software which manages your home automation system.
 
@@ -16,7 +18,7 @@ Multilingual, Jeedom software is already in English language and can be translat
 
 [Jeedom Software] (http://jeedom.fr/index.php)
 
-#How to use this image
+#How to use this set of containers
 
 First We have to run a mysql container <= 5.6.21 (Actually there is a bug with PDO and mysql > 5.6.21 so we con't use mysql:latest)
 
