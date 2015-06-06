@@ -1,4 +1,4 @@
-FROM debian:jessie
+FROM mazzolino/armhf-debian
 
 RUN apt-get update && apt-get install -y \
     wget \
