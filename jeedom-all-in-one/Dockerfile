@@ -10,7 +10,7 @@ RUN echo "mysql-server mysql-server/root_password password ${JEEDOM_DB_PASSWORD}
 RUN echo "mysql-server mysql-server/root_password_again password ${JEEDOM_DB_PASSWORD}" | debconf-set-selections
 
 # Required for nodejs
-RUN echo 'deb http://ftp.it.debian.org/debian wheezy-backports main' >> /etc/apt/sources.list
+RUN curl -sL https://deb.nodesource.com/setup | sudo bash -
 RUN apt-get update && apt-get install -y \
 	adduser \
 	build-essential \
