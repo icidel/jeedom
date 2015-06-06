@@ -1,6 +1,6 @@
-FROM debian:jessie
+FROM mazzolino/armhf-debian
 
-MAINTAINER cedric.olivier@free.fr
+MAINTAINER icidel@gmail.com
 
 ENV JEEDOM_DB_HOST localhost
 ENV JEEDOM_DB_PASSWORD jeedom
@@ -13,11 +13,11 @@ RUN apt-get update && apt-get install -y \
 	adduser \
 	build-essential \
 	cron \
+	git \
 	libarchive-dev \
 	libav-tools \
 	libjsoncpp-dev \
 	libpcre3-dev \
-	git \
 	libssh2-php \
 	libtinyxml-dev \
 	libudev1 \
@@ -33,6 +33,7 @@ RUN apt-get update && apt-get install -y \
 	nodejs \
 	ntp \
 	openssh-server \
+	php-pear \
 	php5-cli \
 	php5-common \
 	php5-curl \
@@ -40,7 +41,6 @@ RUN apt-get update && apt-get install -y \
 	php5-fpm \
 	php5-json \
 	php5-mysql \
-	php-pear \
 	python-serial \
 	sudo \
 	supervisor \
