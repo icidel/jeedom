@@ -2,6 +2,8 @@ FROM mazzolino/armhf-debian
 
 MAINTAINER icidel@gmail.com
 
+# Required for nodejs
+RUN echo 'deb http://ftp.it.debian.org/debian wheezy-backports main' >> /etc/apt/sources.list
 RUN apt-get update && apt-get install -y \
 	build-essential \
 	cron \
