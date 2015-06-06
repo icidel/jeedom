@@ -40,7 +40,7 @@ fi
 if [ "$JEEDOM_DB_HOST" = "localhost" ]
 then
   /usr/bin/mysqld_safe &
-  sleep 5
+  mysqladmin --silent --wait=30 ping || exit 1
 fi
 
 set_config() {
