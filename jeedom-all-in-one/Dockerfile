@@ -9,8 +9,16 @@ ENV SHELL_ROOT_PASSWORD jeedom
 RUN echo "mysql-server mysql-server/root_password password ${JEEDOM_DB_PASSWORD}" | debconf-set-selections
 RUN echo "mysql-server mysql-server/root_password_again password ${JEEDOM_DB_PASSWORD}" | debconf-set-selections
 
-# Required for nodejs
-RUN curl -sL https://deb.nodesource.com/setup | sudo bash -
+# flag to avoid interactions during setup screens 
+RUN export DEBIAN_FRONTEND=noninteractive
+
+RUN echo 'deb http://ftp.it.debian.org/debian wheezy-backports main' >> /etc/apt/sources.list
+RUN apt-get update
+# NodeJS setup from https://deb.nodesource.com/setup
+RUN apt-get install -y \
+	curl
+RUN curl -sL https://deb.nodesource.com/setup | bash -
+# --------------------------------------------------
 RUN apt-get update && apt-get install -y \
 	adduser \
 	build-essential \
