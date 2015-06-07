@@ -1,4 +1,4 @@
-FROM mazzolino/armhf-debian
+FROM armhfbuild/debian
 
 RUN apt-get update && apt-get install -y \
     wget \
