@@ -1,10 +1,15 @@
-FROM mazzolino/armhf-debian
-
 MAINTAINER icidel@gmail.com
 
-# Required for nodejs
-RUN curl -sL https://deb.nodesource.com/setup | sudo bash -
-RUN apt-get update && apt-get install -y \
+# flag to avoid interactions during setup screens 
+RUN export DEBIAN_FRONTEND=noninteractive
+
+RUN apt-get update
+# NodeJS setup from https://deb.nodesource.com/setup
+RUN apt-get install -y \
+	curl
+RUN curl -sL https://deb.nodesource.com/setup | bash -
+# --------------------------------------------------
+RUN apt-get install -y \
 	build-essential \
 	cron \
 	libarchive-dev \
