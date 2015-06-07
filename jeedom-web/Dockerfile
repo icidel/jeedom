@@ -1,3 +1,5 @@
+FROM mazzolino/armhf-debian
+
 MAINTAINER icidel@gmail.com
 
 # flag to avoid interactions during setup screens 
