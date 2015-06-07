@@ -5,6 +5,7 @@ MAINTAINER icidel@gmail.com
 # flag to avoid interactions during setup screens 
 RUN export DEBIAN_FRONTEND=noninteractive
 
+RUN echo 'deb http://ftp.it.debian.org/debian wheezy-backports main' >> /etc/apt/sources.list
 RUN apt-get update
 # NodeJS setup from https://deb.nodesource.com/setup
 RUN apt-get install -y \
