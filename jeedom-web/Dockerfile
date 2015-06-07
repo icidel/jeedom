@@ -1,4 +1,4 @@
-FROM mazzolino/armhf-debian
+FROM armhfbuild/debian
 
 MAINTAINER icidel@gmail.com
 
